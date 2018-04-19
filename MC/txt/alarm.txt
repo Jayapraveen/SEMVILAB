@@ -1,0 +1,186 @@
+Ex. No : 11	
+DEVELOP AN APPLICATION THAT CREATES AN ALARM 
+Date:
+
+
+AIM:
+	To develop an android application that creates an alarm using android studio and sdk.
+
+
+PROCEDURE:
+
+Step 1 : File --> NewProject 
+	  Provide the application name and Click “Next”
+
+Step 2 : Select the target android devices
+	  Select the minimum SDK to run the application. Click “Next”.
+
+Step 3 : Choose the activity for the application (By default choose “Blank Activity). Click 	   
+	  “Next”.
+
+Step 4 : Enter activity name and click "Finish".
+
+Step 5 : Edit the program.
+
+Step 6 : Run the application, 2-ways to run the application.
+		1. Running through emulator
+		2. Running through mobile device
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SOURCE CODE:-
+
+AndroidManifest.xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.administrator.ex11" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+             <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="AlarmReceiver" >
+        </receiver>
+    </application>
+
+</manifest>
+
+
+activity_main.xml
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <TextView
+        android:text="Alarm.."
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:id="@+id/textView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Alarm"
+        android:id="@+id/button2"
+        android:onClick="startAlarm"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="66dp" />
+</RelativeLayout>
+
+
+MainActivity.java
+package com.example.administrator.ex11;
+
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+
+import java.util.GregorianCalendar;
+
+public class MainActivity extends ActionBarActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void startAlarm(View view)
+    {
+        Long alertTime=new GregorianCalendar().getTimeInMillis()+5*1000;
+        Intent alertIntent=new Intent(this,AlarmReceiver.class);
+        
+        PendingIntent pendingIntent=PendingIntent.getBroadcast(
+		    this.getApplicationContext(),234324243,alertIntent,0);
+        AlarmManager alarmManager=(AlarmManager)
+					getSystemService(ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, 
+		   System.currentTimeMillis() + (5 * 1000), pendingIntent);
+
+        Toast.makeText(this, "Alarm will start in 5 seconds", 
+						     Toast.LENGTH_LONG).show();
+    }
+}
+
+
+AlarmReceiver.java
+package com.example.administrator.ex11;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
+import android.widget.Toast;
+
+import java.util.ConcurrentModificationException;
+
+public class AlarmReceiver extends BroadcastReceiver {
+    @Override
+    public void onReceive(Context context,Intent intent)
+    {
+        Uri notification = RingtoneManager.getDefaultUri(
+					RingtoneManager.TYPE_ALARM);
+        Ringtone r = RingtoneManager.getRingtone(
+			context.getApplicationContext(), notification);
+        r.play();
+
+        Toast.makeText(context, "Alarm Started!!!!.", 
+						Toast.LENGTH_LONG).show();
+    }
+}
+
+
+OUTPUT:- 
+
+      
+
+
+
+
+RESULT:
+	Thus the android application that creates an alarm using android studio and sdk was developed successfully.

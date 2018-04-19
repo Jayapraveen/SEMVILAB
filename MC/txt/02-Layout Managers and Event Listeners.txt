@@ -1,0 +1,87 @@
+02  - Layout  Managers  and Event  Listeners
+
+Ex.  No.         :    2                                                           Roll  No.       :
+
+Date                :                                   Reg.  No.       :
+
+Aim
+
+Develop     an    application     that     uses   Layout     Managers     and    event listeners.
+
+Procedure
+
+Start  a new  project  “Layout  Managers”.
+
+Drag  a LinearLayout  (Vertical)  to  the  screen.
+
+Place  the  components  on  the  layout  as shown  in  the  following  order: Component                 Id                                Text
+TextView                   textView                   Roll  No. EditText                   etRollNo
+TextView                   textView2                 Name
+EditText                   etName
+TextView                   textView3                 Branch
+Spinner                     spinner
+
+Right  cliock  on  the  package selct  New   Activity   Empty  Activity. Name  it as  Second Activity.
+Drag  a LinearLayout  (Vertical)  to  the  screen.
+
+Place  the  components  on  the  layout  as shown  in  the  following  order: Component                 Id
+TextView                   tvRollNo TextView                   tvName TextView                   tvBranch
+
+Two  most  commonly   used event  listeners  –  onClickEventListener()  and onLongClickEventListener().
+
+Open  the  MainActivity.java  file.
+First  we  need to  define  some  variables  for  each items  in  the  UI. EditText  etRollNo,  etName;
+Spinner  spinner;
+
+12         B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai
+Button  button;
+String  [] dept  =  {"CSE",  "IT"}; String  rollNo,  name,  branch;
+
+Assign    the    UI    elements    to    these    variables    using    findViewById()
+inside  onCreate().
+
+etRollNo  =  (EditText)  findViewById(R.id.etRollNo); etName  =  (EditText)  findViewById(R.id.etName); spinner  =  (Spinner)  findViewById(R.id.spinner); button  =  (Button)  findViewById(R.id.button); ArrayAdapter  arrayAdapter=  new  ArrayAdapter
+(MainActivity.this,  android.R.layout.simple_spinner_item,  dept);
+spinner.setAdapter(arrayAdapter); Implementing  the  onClickListener:
+button.setOnClickListener(new  View.OnClickListener()  {
+@Override
+public  void  onClick(View  v)  {
+rollNo  =  etRollNo.getText().toString();
+name  =  etName.getText().toString();
+branch  =  spinner.getSelectedItem().toString(); Intent  intent  =  new  Intent(MainActivity.this,
+SecondActivity.class);
+intent.putExtra("rollNo",  rollNo); intent.putExtra("name",  name); intent.putExtra("branch",  branch); startActivity(intent);
+}
+});
+
+Open  the  SecondActivity.java  file.
+
+Define  variables  for  each items  in  the  UI. TextView  tvRollNo,  tvName,  tvBranch;
+Type  the  following  inside  the  onCreate()  method.
+
+tvRollNo  =  (TextView)  findViewById(R.id.tvRollNo); tvName  =  (TextView)  findViewById(R.id.tvName); tvBranch  =  (TextView)  findViewById(R.id.tvBranch); Intent  intent  =  getIntent(); tvRollNo.setText(intent.getStringExtra("rollNo")); tvName.setText(intent.getStringExtra("name")); tvBranch.setText(intent.getStringExtra("branch"));
+
+
+
+
+
+
+
+B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai         13
+Output
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai         19

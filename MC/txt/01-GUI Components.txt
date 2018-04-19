@@ -1,0 +1,169 @@
+01  - GUI  Components
+
+Ex.  No.         :    1                                                           Roll  No.       :
+
+Date                :                                   Reg.  No.       :
+
+Aim
+
+Develop  an application  that  uses GUI  components,  Font  and Colours.
+
+Objective
+
+In    this    exercise    we    will    learn    about    different    GUI    in    Android
+Studio  and develop  an app that  use GUI,  Font  and Colors.
+
+Procedure
+
+Start  a project  “GUI  Components”.
+UI  design  for  android  application  is done using  a layout  xml  file. Android   studio   offers   a  layout   editor   which   allows   you   to   drag   and
+drop  UI  elements  into  the  interface.
+
+Drag  a LinearLayout  (Vertical)  to  the  screen.
+
+Place  one text  view  and three  button  on  the  layout. Change  the  TextView’s  text  as “Rajalakshmi”.
+Change   the   id’s   for   the   3   buttons   as  btnFontSize,   btnFontColor, btnBgColor  respectively.
+
+Open  the  MainActivity.java  file.
+
+
+java.
+Changing    attributes    (text    color,    background,    typeface    etc.)    in
+
+Create  object  for  the  components.
+
+TextView  textView;
+Button  btnFontSize,  btnFontColor,  btnBgColor;
+
+Declare  variables  for  font  color,  background  color  and font  size.
+
+int  fc =  1,  bc =  1;
+float  fontsize  =  5;
+Create  object  for  the  layout. RelativeLayout  relativeLayout;
+
+B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai          5
+Inside  the  onCreate()  method  type  the  following:
+
+textView  =  (TextView)  findViewById(R.id.textView); btnFontSize  =  (Button)  findViewById(R.id.btnFontSize); btnFontColor  =  (Button)  findViewById(R.id.btnFontColor); btnBgColor  =  (Button)  findViewById(R.id.btnBgColor);
+relativeLayout  =  (RelativeLayout)  findViewById(R.id.activity_main); Implement  the  btnFontSize.
+btnFontSize.setOnClickListener(new  View.OnClickListener()  {
+@Override
+public  void  onClick(View  v)  { textView.setTextSize(fontsize); fontsize  =  (fontsize  +  5)  %   50;
+}
+});
+
+Implement  the  btnFontColor.
+
+btnFontColor.setOnClickListener(new  View.OnClickListener()  {
+@Override
+public  void  onClick(View  v)  {
+switch  (fc %   3)  {
+case 0: textView.setTextColor(Color.RED); break;
+case 1: textView.setTextColor(Color.GREEN); break;
+case 2: textView.setTextColor(Color.BLUE); break;
+
+
+
+}
+});
+}
+fc++;
+
+Implement  the  btnBgColor.
+
+btnBgColor.setOnClickListener(new  View.OnClickListener()  {
+@Override
+public  void  onClick(View  v)  {
+switch  (bc  %   3)  {
+case 0: relativeLayout.setBackgroundColor(Color.RED); break;
+case 1:
+relativeLayout.setBackgroundColor(Color.GREEN);
+break;
+
+
+
+6          B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai
+case 2: relativeLayout.setBackgroundColor(Color.BLUE); break;
+}
+
+}
+});
+bc++;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai          7
+Output
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai         11

@@ -1,0 +1,201 @@
+04  - Basic  Graphical  Primitives
+
+Ex.  No.         :    4                                                           Roll  No.       :
+
+Date                :                                   Reg.  No.       :
+
+Aim
+
+Develop  an  application  that  draws  basic  graphical  primitives  on  the screen.
+
+Objective
+
+This   application   uses  View   class   which   is used  to   draw   graphical items  on  to  the  android  app screen.
+
+This   exercise   draws   some   graphic   primitives   using   Paint,   View, Canvas  and a method  onDraw().
+
+The    android.graphics.Canvas    can   be   used    to    draw    graphics    in android.  It provides  methods  to  draw  oval,  rectangle,  picture,  text,  line etc.
+
+The    android.graphics.Paint    class    is  used   with    canvas   to    draw objects.  It holds  the  information  of  color  and style.
+
+Procedure
+
+Create  a new  private  class  named  SampleCanvas.
+
+private  class  SampleCanvas  {
+
+}
+
+Extend  the  View  class  to  the  SampleCanvas  class  we  just  created.
+
+private  class  SampleCanvas  extends  View  {
+
+}
+
+Go  ahead  and edit  the  Java File. Now  you  can see  an error  message.
+So  Press  [ALT]  +  [ENTER]  on  your  keyboard.
+
+Now  you  will  get  a pop-up  saying  create  constructor  matching  super. Go  ahead  and select  it.
+Now  another  window  will  open up  with  different  constructors.
+
+B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai         27
+Select  the  one with  just  a context  as parameter: View(context:Context)
+public  SampleCanvas(Context  context)  {
+super(context);
+}
+
+Now  a constructor  is automatically  generated  for  you.
+
+Now   place   the   cursor   below   the   constructor   definition   and  press
+[ALT]  +  [Insert]  and select  Override  Methods  from  the  popup   Menu.
+
+Find         the         onDraw()         override         method         from         the         list onDraw(canvas:Canvas):void.
+
+Click  OK.
+
+@Override
+protected  void  onDraw(Canvas  canvas)  {
+super.onDraw(canvas);
+}
+
+Delete  the  super.onDraw(canvas).
+
+@Override
+protected  void  onDraw(Canvas  canvas)  {
+
+}
+
+Now  we  need to  create  a Paint  object.
+
+So  above the  constructor  definition  add the  following  code: Paint  paint  =  new  Paint();
+Now  we  will  start  drawing  inside  the  onDraw  method. Set  the  paint  color:
+paint.setColor(Color.YELLOW); canvas.drawPaint(paint); paint.setTextSize(50);
+
+Draw  a rectangle  : To  draw  a rectangle  we  use the  function:
+
+canvas.drawRect(float   left,   float   top,   float   right,   float   bottom, Paint  paint);
+
+The  arguments  can be depicted  as shown  below:
+
+
+
+28         B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The  co-ordinates  of:
+
+A  =  (left,  top)
+B =  (right,  bottom)
+paint  is the  paint  object  we  created. Lets  draw  a rectangle  now:
+paint.setColor(Color.GREEN); canvas.drawText("Rectangle",  420,  150,  paint); canvas.drawRect(400,  200,  650,  700,  paint);
+
+Drawing  a circle:
+canvas.drawCircle(float  cx,  float  cy,  float  radius,  Paint  paint); Depiction:
+
+The  co-ordinates  of  A  =  (cx,cy). And  the  length  AB  =  radius.
+
+Let’s   draw   a  circle   with   fill color   green   center   at   (200,350)   and radius  150.
+
+
+
+
+B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai         29
+paint.setColor(Color.RED);
+canvas.drawText("Circle",  120,  150,  paint);
+canvas.drawCircle(200,                       350,                       150,                       paint); Drawing  a line:
+canvas.drawLine(float    startX,    float    startY,    float    stopX,    float stopY,  Paint  paint);
+
+Depiction
+
+Draws   a  line   with   initial   point   at   (startX,   startY)   and  end  point at  (stopX,  stopY)
+
+Let’s  draw  a line  from  point  (520,850)  to  (520,1150):
+
+paint.setColor(Color.BLACK); canvas.drawText("Line",  480,  800,  paint); canvas.drawLine(520,  850,  520,  1150,  paint);
+
+There   are  more   graphics   that   we   can  draw   into   the   canvas  let’s check them  out:
+
+paint.setColor(Color.BLACK); paint.setStrokeWidth(3); canvas.drawPoint(200,  200,  paint);
+
+Displaying  the  drawings. Define  a SampleCanvas  object:
+SampleCanvas  drawView  =  new  SampleCanvas(this);
+
+protected  void  onCreate(Bundle  savedInstanceState)  {
+super.onCreate(savedInstanceState);
+SampleCanvas  drawView  =  new  SampleCanvas(this);
+setContentView(R.layout.activity_main);
+}
+
+Now  set  the  content  view  to  drawView. setContentView(drawView);
+protected  void  onCreate(Bundle  savedInstanceState)  {
+super.onCreate(savedInstanceState);
+SampleCanvas  drawView  =  new  SampleCanvas(this);
+setContentView(drawView);
+}
+
+Now  Run  the  application.
+
+
+
+30         B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai
+Output
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai         33

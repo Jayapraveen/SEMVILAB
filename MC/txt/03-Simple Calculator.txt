@@ -1,0 +1,159 @@
+03  - Simple  Calculator
+
+Ex.  No.         :    3                                                           Roll  No.       :
+
+Date                :                                   Reg.  No.       :
+
+Aim
+
+Develop  a native  Calculator  Application.
+
+Objective
+In  this  application  we  are going  to  start  a new  project  Calculator. First    of    all,    to    start    with    we    are  going    to    create    a   simple
+calculator  to  do  simple  arithmetic  operations  (i.e.,  one operator  and two operands).
+
+Procedure
+
+Start  Android  Studio. Create  a  new  Project. Application  Name:  ‘Calculator’.
+First   of   all   insert   a  Linear   Layout   (Vertical)   inside   the   Relative
+Layout.
+
+Delete  the  Hello  World.
+
+Next  Insert  a Text  Field  inside  the  Linear  Layout  (Vertical). Go  to  Design  Tab and  insert  Buttons  for  operators.
+Place    the    components    and   change   the    id’s    for    all    components according  to  this  table:
+
+Component                 Id                                Text
+
+TextView                   textView                   First  No. EditText                   etFNo
+TextView                   textView2                 Second  No. EditText                   etSNo
+TextView                   textView2                 Result
+EditText                   etRes
+
+Insert    a   Linear    Layout    (Horizontal)    inside    the    Linear    Layout
+(Vertical).
+
+
+
+
+20         B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai
+Place    the    components    and   change   the    id’s    for    all    components according  to  this  table:
+
+Component                 Id                                Text
+
+Button                       btnAdd                       + Button                       btnSub                       - Button                       btnMul                       * Button                       btnDiv                       /
+
+Open  MainActivity.java  file.
+First  we  need to  define  some  variables  for  each item  in  the  UI. EditText  etFNo,  etSNo,  etRes;
+Button  btnAdd,  btnSub,  btnMul,  btnDiv;
+
+Assign    the    UI    elements    to    these    variables    using    findViewById()
+inside  onCreate().
+
+etFNo = (EditText) findViewById(R.id.etFNo); etSNo = (EditText) findViewById(R.id.etSNo); etRes = (EditText) findViewById(R.id.etRes); btnAdd = (Button) findViewById(R.id.btnAdd); btnSub = (Button) findViewById(R.id.btnSub); btnMul = (Button) findViewById(R.id.btnMul); btnDiv  =  (Button)  findViewById(R.id.btnDiv);
+
+Register  the  buttons  for  onClickListenet  event.
+
+btnAdd.setOnClickListener(this); btnSub.setOnClickListener(this); btnMul.setOnClickListener(this); btnDiv.setOnClickListener(this);
+
+Override  the  onClick()  method  and add the  following  code:
+
+public  void  onClick(View  v)  {
+float  fNo  =  0,  sNo  =  0,  res =  0; String  op  =  "";
+fNo = Float.parseFloat(etFNo.getText().toString()); sNo = Float.parseFloat(etSNo.getText().toString()); switch  (v.getId())  {
+case R.id.btnAdd:
+res =  fNo  +  sNo;
+break;
+case R.id.btnSub:
+res =  fNo  - sNo;
+break;
+case R.id.btnMul:
+res =  fNo  *  sNo;
+
+
+B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai         21
+break;
+case R.id.btnDiv:
+res =  fNo  / sNo;
+break;
+}
+etRes.setText(""  +  res);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+22         B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai
+Output
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+26         B.BHUVANESWARAN | Assistant Professor (SG) | CSE | REC | Chennai

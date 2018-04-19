@@ -1,0 +1,130 @@
+
+
+
+
+
+
+
+
+
+Engineering Drawing
+
+
+Anup Ghosh
+Orthographic Projection
+Orthographic Projection
+Orthographic Projection
+Orthographic Projection
+
+
+When the projectors are parallel to each other and also perpendicular to the plane, the projection is called orthographic projection.
+Orthographic Projection
+
+
+When the projectors are parallel to each other and also perpendicular to the plane, the projection is called orthographic projection.
+1   A plane of projection (POP)  is a plane on which a particular view is projected.
+Orthographic Projection
+
+
+When the projectors are parallel to each other and also perpendicular to the plane, the projection is called orthographic projection.
+1   A plane of projection (POP)  is a plane on which a particular view is projected.
+2   Three such planes, perpendicular to each other, are called
+principal planes or reference planes (RP).
+Orthographic Projection
+
+
+When the projectors are parallel to each other and also perpendicular to the plane, the projection is called orthographic projection.
+1   A plane of projection (POP)  is a plane on which a particular view is projected.
+2   Three such planes, perpendicular to each other, are called
+principal planes or reference planes (RP).
+3   When the observer looks at the object from the front, the
+view obtained is called the front view (FV) or Elevation. FV is seen on the VP.
+Orthographic Projection
+
+
+When the projectors are parallel to each other and also perpendicular to the plane, the projection is called orthographic projection.
+1   A plane of projection (POP)  is a plane on which a particular view is projected.
+2   Three such planes, perpendicular to each other, are called
+principal planes or reference planes (RP).
+3   When the observer looks at the object from the front, the
+view obtained is called the front view (FV) or Elevation. FV is seen on the VP.
+4   When the observer looks at the object from above, the view obtained is called top view (TV) or plan. TV is seen on the HP.
+Orthographic Projection
+
+
+When the projectors are parallel to each other and also perpendicular to the plane, the projection is called orthographic projection.
+1   A plane of projection (POP)  is a plane on which a particular view is projected.
+2   Three such planes, perpendicular to each other, are called
+principal planes or reference planes (RP).
+3   When the observer looks at the object from the front, the
+view obtained is called the front view (FV) or Elevation. FV is seen on the VP.
+4   When the observer looks at the object from above, the view obtained is called top view (TV) or plan. TV is seen on the HP.
+5   Side Views When the observer looks at the object from side, i.e., from his left-hand side or right-hand side, the view obtained is called side view (SV). SV is seen on the PP.
+Projection of Points
+
+
+
+Point in first quadrant                      Point in second  quadrant
+Projection of Points
+
+
+
+Point in third  quadrant      In fourth quadrant      In VP  and  HP
+Projection of Lines
+
+
+
+
+Line  parallel  to  one  or  both  planes                     Line  on  a  plane  
+Projection of Lines
+
+
+
+
+Line perpendicular to  one of the  planes
+Projection of Lines
+
+
+
+
+Line inclined to  HP & parallel to  VP
+Projection of Lines
+
+
+
+
+Line parallel to  HP & inclined to  VP
+Projection of Lines
+
+
+
+
+Line making θ with HP & φ with VP
+Traces of Lines
+
+
+
+Line is parallel to  any one palne
+Traces of Lines
+
+
+
+Lines inclined to  both  planes
+Traces of Lines
+
+
+
+Lines inclined to  both  planes
+Naming convention
+
+
+
+
+
+
+1   The line denoting the intersection of HP and VP is reference line and denoted by xy, x1 y1, x2 y2 ....
+2   All points in a plan or top view are denoted by small alphabets.  Any new position is denoted with suffix like a1,  a2,  a3  ...
+3   All points in an elevation or front view are denoted by small alphabets with prime (‘).  Any new position is denoted with
+suffix like a‘ ,  a‘ ,  a‘
+...
+1       2       3
